@@ -79,7 +79,7 @@ nav .lk a:not(.nb):hover{color:var(--r)}
 /* quem sou */
 .qs{display:grid;grid-template-columns:360px 1fr;gap:64px;align-items:center}
 .ph{position:relative;aspect-ratio:.85;border-radius:20px;overflow:hidden;background:radial-gradient(circle at 50% 30%,var(--r),#5A0A11 60%,#1A0507)}
-.ph img{position:absolute;left:50%;bottom:0;height:98%;transform:translateX(-50%)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(0,0,0,.7))}
 .ph .cap{position:absolute;left:22px;bottom:18px;z-index:2;color:#fff}.ph .cap b{display:block;font-size:18px}.ph .cap span{font-size:12px;color:#E2DDD7}
 .qs p{font-size:16px;color:var(--mu);margin-top:16px;max-width:520px}.qs p b{color:var(--tx)}
@@ -318,6 +318,9 @@ body.mv .crs{opacity:1}
 .ck-b button{border:0;border-radius:999px;padding:9px 16px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit}
 #ckn{background:transparent;color:#C9C4BE;border:1px solid #45413D}#cky{background:#A8141F;color:#fff}
 @media(max-width:600px){.ck-b{left:10px;right:80px;bottom:10px}}
+
+/* foto do Quem sou sempre visível */
+.ph.rv,.ph.rv.in{clip-path:none!important}
 </style></head><body><div class="ld" id="ld" aria-hidden="true"><div class="ld-in"><svg viewBox="-54 -42 106 84"><g transform="skewX(-12)" fill="none" stroke-linejoin="round">
 <mask id="lm1" maskUnits="userSpaceOnUse" x="-80" y="-60" width="160" height="120"><rect x="-80" y="-60" width="160" height="120" fill="#fff"/><path d="M0,-12H30Q38,-12 38,-4V26Q38,34 30,34H0Q-8,34 -8,26V-4Q-8,-12 0,-12Z" stroke="#000" stroke-width="17.5"/></mask>
 <mask id="lm2" maskUnits="userSpaceOnUse" x="-80" y="-60" width="160" height="120"><rect x="-80" y="-60" width="160" height="120" fill="#fff"/><path d="M6,-24V-2" stroke="#000" stroke-width="17.5"/></mask>
@@ -450,7 +453,7 @@ body.mv .crs{opacity:1}
 </div></section>
 
 <section id="quem-sou"><div class="w qs">
- <div class="ph"><img src="topo.webp" alt="Gustavo Lara"><div class="cap"><b>Gustavo Lara</b><span>Marketing e vendas · Duque de Caxias/RJ</span></div></div>
+ <div class="ph"><picture><source srcset="foto-gustavo.webp" type="image/webp"><img src="foto-gustavo.jpg" alt="Gustavo Lara" width="900" height="900" loading="lazy"></picture><div class="cap"><b>Gustavo Lara</b><span>Marketing e vendas · Duque de Caxias/RJ</span></div></div>
  <div>
   <p class="k">Quem sou</p>
   <h2>Eu sou o <b>Gustavo Lara.</b></h2>
@@ -550,7 +553,7 @@ if(hv){addEventListener("mousemove",function(e){tx=e.clientX;ty=e.clientY;docume
 /* botões magnéticos */
 document.querySelectorAll(".btn,.nb").forEach(function(b){b.addEventListener("mousemove",function(e){var r=b.getBoundingClientRect();b.style.transform="translate("+(e.clientX-r.left-r.width/2)*.18+"px,"+(e.clientY-r.top-r.height/2)*.28+"px)"});b.addEventListener("mouseleave",function(){b.style.transform=""})})}
 /* parallax da foto */
-var im=document.querySelector(".ph img");if(im)addEventListener("scroll",function(){var r=im.parentNode.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;var p=(r.top+r.height/2-innerHeight/2)/innerHeight;im.style.transform="translateX(-50%) translateY("+p*30+"px) scale(1.04)"},{passive:true});
+var im=document.querySelector(".ph img");if(im)addEventListener("scroll",function(){var r=im.parentNode.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;var p=(r.top+r.height/2-innerHeight/2)/innerHeight;im.style.transform="translateY("+p*18+"px) scale(1.12)"},{passive:true});
 /* carrossel: arrastar, pontos, autoplay */
 var t=document.getElementById("svt"),dd=document.getElementById("svd");if(t){var cs=t.querySelectorAll(".sc"),cur=0,ap;
 cs.forEach(function(c,i){var b=document.createElement("button");b.setAttribute("aria-label","Serviço "+(i+1));b.onclick=function(){go(i)};dd.appendChild(b)});
