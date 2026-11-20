@@ -321,12 +321,39 @@ body.mv .crs{opacity:1}
 
 /* foto do Quem sou sempre visível */
 .ph.rv,.ph.rv.in{clip-path:none!important}
+
+/* seletor: lojista ou advogado */
+.qz{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:20px;background:rgba(14,13,13,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transition:opacity .4s}
+.qz.on{opacity:1}.qz[hidden]{display:none}
+.qz-c{position:relative;width:min(560px,100%);background:#2B2928;color:#fff;border-radius:24px;padding:34px 30px 26px;box-shadow:0 40px 80px rgba(0,0,0,.45);overflow:hidden;transform:translateY(24px) scale(.97);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.qz.on .qz-c{transform:none}
+.qz-c::before{content:"";position:absolute;width:380px;height:380px;right:-140px;top:-180px;border-radius:50%;background:radial-gradient(circle,rgba(224,38,47,.4),transparent 65%);pointer-events:none}
+.qz-c .k{color:#F26B73;margin:0 0 8px}
+.qz-c h3{font-size:30px;line-height:1.05;font-weight:400;text-transform:uppercase;margin:0 0 6px;letter-spacing:-.02em}.qz-c h3 b{color:#F0434D}
+.qz-c>p{color:#CFC9C5;margin:0 0 20px;font-size:15px}
+.qz-o{position:relative;display:grid;grid-template-columns:48px 1fr 24px;gap:14px;align-items:center;width:100%;text-align:left;font:inherit;color:#fff;text-decoration:none;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:16px;padding:14px 16px;margin-bottom:10px;cursor:pointer;transition:background .25s,border-color .25s,transform .25s}
+.qz-o:hover,.qz-o:focus-visible{background:rgba(168,20,31,.25);border-color:#E0262F;transform:translateX(4px);outline:none}
+.qz-o i{width:48px;height:48px;border-radius:12px;background:#A8141F;display:grid;place-items:center}.qz-o i svg{width:24px;height:24px}
+.qz-o b{display:block;font-size:17px}.qz-o span{color:#B8B2AE;font-size:13px}
+.qz-o em{font-style:normal;font-size:20px;color:#F0434D}
+.qz-o.out i{background:rgba(255,255,255,.1)}
+.qz-x{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.08);color:#fff;font-size:22px;cursor:pointer}
+.qz-x:hover{background:rgba(255,255,255,.16)}
+.hsg{margin-top:18px;font-size:14px;color:var(--mu)}.hsg a{color:var(--r);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:600px){.qz{place-items:end center;padding:10px}.qz-c{padding:28px 20px 18px;border-radius:22px}.qz-c h3{font-size:24px}}
 </style></head><body><div class="ld" id="ld" aria-hidden="true"><div class="ld-in"><svg viewBox="-54 -42 106 84"><g transform="skewX(-12)" fill="none" stroke-linejoin="round">
 <mask id="lm1" maskUnits="userSpaceOnUse" x="-80" y="-60" width="160" height="120"><rect x="-80" y="-60" width="160" height="120" fill="#fff"/><path d="M0,-12H30Q38,-12 38,-4V26Q38,34 30,34H0Q-8,34 -8,26V-4Q-8,-12 0,-12Z" stroke="#000" stroke-width="17.5"/></mask>
 <mask id="lm2" maskUnits="userSpaceOnUse" x="-80" y="-60" width="160" height="120"><rect x="-80" y="-60" width="160" height="120" fill="#fff"/><path d="M6,-24V-2" stroke="#000" stroke-width="17.5"/></mask>
 <path pathLength="1" mask="url(#lm1)" d="M-32,-34H-2Q6,-34 6,-26V4Q6,12 -2,12H-32Q-40,12 -40,4V-26Q-40,-34 -32,-34Z" stroke="#C41A26" stroke-width="8.5"/><path pathLength="1" mask="url(#lm2)" d="M0,-12H30Q38,-12 38,-4V26Q38,34 30,34H0Q-8,34 -8,26V-4Q-8,-12 0,-12Z" stroke="#C41A26" stroke-width="8.5"/><path pathLength="1" d="M6,-24V-2" stroke="#C41A26" stroke-width="8.5"/></g></svg><span>gustavolara</span></div></div>
 <div class="crs" id="crs" aria-hidden="true"></div><div class="prg" id="prg"></div><div class="cg" id="cg" aria-hidden="true"></div>
 
+<div class="qz" id="qz" role="dialog" aria-modal="true" aria-labelledby="qz-t" hidden><div class="qz-c">
+ <button type="button" class="qz-x" data-q="fechar" aria-label="Fechar">×</button>
+ <p class="k">Antes de começar</p><h3 id="qz-t">Qual é o seu <b>negócio?</b></h3><p>Assim eu te mostro só o que faz sentido para você.</p>
+ <a class="qz-o" href="lojistas.html" data-q="loja"><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M10 20v-5h4v5"/></svg></i><span><b>Tenho uma loja</b>Física, online ou marketplace</span><em>→</em></a>
+ <a class="qz-o" href="advogados.html" data-q="adv"><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M7 21h10"/><path d="M5 7h14"/><path d="M5 7l-3 7a3.5 3.5 0 0 0 6 0z"/><path d="M19 7l-3 7a3.5 3.5 0 0 0 6 0z"/></svg></i><span><b>Sou advogado(a)</b>Escritório ou atuação solo</span><em>→</em></a>
+ <button type="button" class="qz-o out" data-q="outro"><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></i><span><b>Outro negócio</b>Prestador de serviço, consultório, empresa</span><em>→</em></button>
+</div></div>
 <nav><div class="w">
  <a class="lg" href="#"><svg viewBox="-54 -42 106 84" aria-hidden="true"><g transform="skewX(-12)" fill="none" stroke-linejoin="round"><path d="M-32,-34H-2Q6,-34 6,-26V4Q6,12 -2,12H-32Q-40,12 -40,4V-26Q-40,-34 -32,-34Z" stroke="#A8141F" stroke-width="8.5"/><path d="M0,-12H30Q38,-12 38,-4V26Q38,34 30,34H0Q-8,34 -8,26V-4Q-8,-12 0,-12Z" stroke="#EDEAE6" stroke-width="17.5"/><path d="M0,-12H30Q38,-12 38,-4V26Q38,34 30,34H0Q-8,34 -8,26V-4Q-8,-12 0,-12Z" stroke="#A8141F" stroke-width="8.5"/><path d="M6,-24V-2" stroke="#EDEAE6" stroke-width="17.5"/><path d="M6,-24V-2" stroke="#A8141F" stroke-width="8.5"/></g></svg>gustavolara</a>
  <div class="lk"><a href="#resultados">Resultados</a><a href="#o-que-faco">Método</a><a href="#servicos">Serviços</a><a href="#planos">Planos</a><a href="#quem-sou">Quem sou</a><a class="nb" href="#diagnostico">Diagnóstico gratuito</a></div>
@@ -339,6 +366,7 @@ body.mv .crs{opacity:1}
   <p class="lead">Sou assessor, não agência: organizo o processo de vendas do seu negócio, do Instagram ao atendimento, para ter mais clientes chegando, comprando e voltando.</p>
   <ul class="ck"><li>Marketing focado em vendas, não em curtida</li><li>Relatório mensal com os números de vendas</li><li>Você fala direto comigo, sem intermediários</li></ul>
   <a class="btn" href="#diagnostico">Quero meu diagnóstico gratuito</a>
+  <p class="hsg">Tem loja? <a href="lojistas.html">Página para lojas</a> · É advogado? <a href="advogados.html">Página para escritórios</a></p>
  </div>
 <div class="fw"><div class="flc" aria-hidden="true"><span class="c1"><i></i>Instagram</span><span class="c2"><i></i>Google</span><span class="c3"><i></i>WhatsApp</span><span class="c4"><i></i>Marketplace</span></div>
  <form class="fm" id="diagnostico">
@@ -459,11 +487,6 @@ body.mv .crs{opacity:1}
   <h2>Eu sou o <b>Gustavo Lara.</b></h2>
   <p>Comecei como designer e entendi, na prática, que <b>marca bonita não basta: ela precisa vender.</b> Em 17 anos, saí do design para a estratégia, o tráfego, o site e o comercial, inclusive dentro de loja e vendendo em marketplace.</p>
   <p>Hoje uso essa experiência para estruturar o marketing e as vendas de lojas, do primeiro anúncio ao relatório do mês.</p>
-  <div class="pc">
-   <div><b>17 anos</b><span>de design, comunicação e vendas.</span></div>
-   <div><b>Dentro da loja</b><span>já vendi no balcão e no marketplace.</span></div>
-   <div><b>Todo o Brasil</b><span>de Duque de Caxias/RJ, online.</span></div>
-  </div>
  </div>
 </div></section>
 
@@ -602,4 +625,18 @@ document.getElementById("ckn").onclick=function(){set("n");bar.classList.remove(
 document.getElementById("diagnostico").addEventListener("submit",function(){window.glTrack&&glTrack("lead")});
 document.querySelectorAll("#zap,.zapf").forEach(function(a){a.addEventListener("click",function(){window.glTrack&&glTrack("contact")})});
 </script>
+<script>(function(){
+/* seletor de negócio: aparece só na primeira visita, depois do loader. ?todos=1 ou link com # pula. */
+var q=document.getElementById("qz");if(!q)return;var K="gl_seg";
+function get(){try{return localStorage.getItem(K)}catch(e){return null}}function set(v){try{localStorage.setItem(K,v)}catch(e){}}
+function fechar(){q.classList.remove("on");setTimeout(function(){q.hidden=true},400);document.documentElement.style.overflow=""}
+q.addEventListener("click",function(e){var o=e.target.closest("[data-q]");if(e.target===q){set("fechou");fechar();return}if(!o)return;var v=o.getAttribute("data-q");
+ set(v);if(window.glTrack)try{glTrack("segmento_"+v)}catch(_){}
+ if(v==="outro"||v==="fechar"){e.preventDefault();fechar()}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!q.hidden){set("fechou");fechar()}});
+var u=new URLSearchParams(location.search);
+if(get()||location.hash||u.get("todos")||u.get("utm_source")||/bot|crawl|spider|lighthouse/i.test(navigator.userAgent))return;
+var rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+setTimeout(function(){q.hidden=false;document.documentElement.style.overflow="hidden";requestAnimationFrame(function(){q.classList.add("on");var f=q.querySelector(".qz-o");f&&f.focus({preventScroll:true})})},rm?300:2700);
+})();</script>
 </body></html>
