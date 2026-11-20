@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /index-
+Sitemap: https://gustavolara.com.br/sitemap.xml
