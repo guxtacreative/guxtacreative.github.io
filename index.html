@@ -626,7 +626,8 @@ document.getElementById("diagnostico").addEventListener("submit",function(){wind
 document.querySelectorAll("#zap,.zapf").forEach(function(a){a.addEventListener("click",function(){window.glTrack&&glTrack("contact")})});
 </script>
 <script>(function(){
-/* seletor de negócio: aparece só na primeira visita, depois do loader. ?todos=1 ou link com # pula. */
+/* seletor de negócio: aparece toda vez que alguém entra no site, depois do loader.
+   Não aparece quando a pessoa já está navegando dentro do site, num link com #, com ?todos=1 ou vindo de anúncio (UTM). ?seletor=1 força. */
 var q=document.getElementById("qz");if(!q)return;var K="gl_seg";
 function get(){try{return localStorage.getItem(K)}catch(e){return null}}function set(v){try{localStorage.setItem(K,v)}catch(e){}}
 function fechar(){q.classList.remove("on");setTimeout(function(){q.hidden=true},400);document.documentElement.style.overflow=""}
@@ -635,7 +636,8 @@ q.addEventListener("click",function(e){var o=e.target.closest("[data-q]");if(e.t
  if(v==="outro"||v==="fechar"){e.preventDefault();fechar()}});
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!q.hidden){set("fechou");fechar()}});
 var u=new URLSearchParams(location.search);
-if(get()||location.hash||u.get("todos")||u.get("utm_source")||/bot|crawl|spider|lighthouse/i.test(navigator.userAgent))return;
+var interno=false;try{interno=!!document.referrer&&new URL(document.referrer).host===location.host}catch(_){}
+if(!u.get("seletor")&&(interno||location.hash||u.get("todos")||u.get("utm_source")||/bot|crawl|spider|lighthouse/i.test(navigator.userAgent)))return;
 var rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
 setTimeout(function(){q.hidden=false;document.documentElement.style.overflow="hidden";requestAnimationFrame(function(){q.classList.add("on");var f=q.querySelector(".qz-o");f&&f.focus({preventScroll:true})})},rm?300:2700);
 })();</script>
