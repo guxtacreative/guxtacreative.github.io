@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ficha do diagnóstico gratuito | gustavolara</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#EDEAE6;--g:#2B2928;--m:#5E5B58;--r:#A8141F;--l:#D6D1CB;--w:#fff}
+body{background:var(--bg);color:var(--g);font-family:Arial,Helvetica,sans-serif;line-height:1.4;-webkit-font-smoothing:antialiased}
+.w{max-width:620px;margin:0 auto;padding:22px 20px 60px}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:26px}
+.top b{font-size:22px;letter-spacing:-.5px}
+h1{font-size:30px;line-height:1.1;text-transform:uppercase;letter-spacing:-1px;margin-bottom:10px}
+h1 em{font-style:normal;color:var(--r)}
+.sub{color:var(--m);font-size:16px;margin-bottom:22px}
+.card{background:var(--w);border:1px solid var(--l);border-radius:18px;padding:20px;margin-bottom:16px}
+.card h2{font-size:13px;text-transform:uppercase;letter-spacing:1.5px;color:var(--r);margin-bottom:14px}
+label.q{display:block;font-weight:700;font-size:15px;margin:16px 0 7px}
+label.q:first-of-type{margin-top:0}
+.hint{font-weight:400;color:var(--m);font-size:13px}
+input[type=text],input[type=tel],textarea,select{width:100%;border:1px solid var(--l);border-radius:12px;padding:13px 14px;font:inherit;font-size:16px;background:#fff;color:var(--g)}
+textarea{min-height:84px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--r);border-color:var(--r)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{display:flex;align-items:center;gap:8px;border:1px solid var(--l);border-radius:999px;padding:10px 14px;font-size:15px;cursor:pointer;background:#fff;user-select:none}
+.opts input{accent-color:var(--r);width:18px;height:18px}
+.opts label:has(input:checked){border-color:var(--r);background:#F6E7E8}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.seg label{display:block;text-align:center;border:2px solid var(--l);border-radius:14px;padding:16px 8px;font-weight:700;cursor:pointer;background:#fff}
+.seg input{display:none}
+.seg label:has(input:checked){border-color:var(--r);background:var(--r);color:#fff}
+.bloco{display:none}.bloco.on{display:block}
+.btn{display:block;width:100%;text-align:center;text-decoration:none;background:var(--r);color:#fff;font-weight:700;font-size:17px;border-radius:999px;padding:17px;border:0;cursor:pointer;font-family:inherit}
+.btn.o{background:transparent;color:var(--g);border:2px solid var(--g);margin-top:10px}
+.err{color:var(--r);font-size:14px;font-weight:700;margin:10px 0 0;display:none}
+.small{color:var(--m);font-size:12.5px;margin-top:12px}
+.ck{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--m);margin:14px 0 18px}
+.ck input{margin-top:3px;accent-color:var(--r);width:18px;height:18px}
+</style></head><body><div class="w">
+<div class="top"><svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#A8141F" stroke-width="3.2" stroke-linejoin="round"><g transform="rotate(-12 20 20)"><rect x="5" y="6" width="19" height="19" rx="3.5"/><rect x="16" y="15" width="19" height="19" rx="3.5"/></g></svg><b>gustavolara</b></div>
+<h1>Ficha do <em>diagnóstico</em> gratuito</h1>
+<p class="sub">São 3 minutos. Com suas respostas, eu chego na nossa conversa já sabendo onde olhar e não perco tempo com perguntas básicas. Nada é compartilhado com terceiros.</p>
 
+<div class="card"><h2>Você é</h2>
+<div class="seg"><label><input type="radio" name="perfil" value="Advogado(a)"> Advogado(a)</label><label><input type="radio" name="perfil" value="Lojista"> Lojista / comércio</label></div></div>
+
+<div class="card"><h2>Seus dados</h2>
+<label class="q" for="nome">Seu nome</label><input type="text" id="nome" autocomplete="name">
+<label class="q" for="zap">WhatsApp com DDD</label><input type="tel" id="zap" autocomplete="tel" placeholder="(21) 9...">
+<label class="q" for="ig">Instagram do negócio <span class="hint">(@)</span></label><input type="text" id="ig" placeholder="@seuperfil">
+<label class="q" for="site">Site ou link que você usa <span class="hint">(se tiver)</span></label><input type="text" id="site" placeholder="Pode deixar em branco">
+<label class="q" for="cid">Cidade onde atua</label><input type="text" id="cid">
+</div>
+
+<div class="bloco" id="b-adv"><div class="card"><h2>Sobre a sua advocacia</h2>
+<label class="q" for="a_area">Área de atuação principal</label><input type="text" id="a_area" placeholder="Ex.: previdenciário, trabalhista, família">
+<label class="q">Você atende</label><div class="opts" data-k="a_publico"><label><input type="radio" name="a_publico" value="Pessoa física"> Pessoa física</label><label><input type="radio" name="a_publico" value="Empresas"> Empresas</label><label><input type="radio" name="a_publico" value="Os dois"> Os dois</label></div>
+<label class="q">Como chegam os seus clientes hoje? <span class="hint">(marque todos)</span></label><div class="opts" data-k="a_canais"><label><input type="checkbox" value="Indicação"> Indicação</label><label><input type="checkbox" value="Instagram"> Instagram</label><label><input type="checkbox" value="Google"> Google</label><label><input type="checkbox" value="Parcerias"> Parcerias</label><label><input type="checkbox" value="Anúncios"> Anúncios</label><label><input type="checkbox" value="Outro"> Outro</label></div>
+<label class="q">Já contratou marketing ou agência antes?</label><div class="opts" data-k="a_ag"><label><input type="radio" name="a_ag" value="Nunca"> Nunca</label><label><input type="radio" name="a_ag" value="Já contratei e parei"> Já contratei e parei</label><label><input type="radio" name="a_ag" value="Tenho hoje"> Tenho hoje</label></div>
+<label class="q" for="a_dif">Qual a sua maior dificuldade hoje?</label><textarea id="a_dif" placeholder="Ex.: poucos contatos, não sei o que postar, atendimento desorganizado..."></textarea>
+<label class="q" for="a_meta">O que você quer melhorar nos próximos 90 dias?</label><textarea id="a_meta"></textarea>
+</div></div>
+
+<div class="bloco" id="b-loj"><div class="card"><h2>Sobre o seu negócio</h2>
+<label class="q" for="l_seg">O que você vende?</label><input type="text" id="l_seg" placeholder="Ex.: celulares, autopeças, roupas">
+<label class="q">Onde você vende hoje? <span class="hint">(marque todos)</span></label><div class="opts" data-k="l_onde"><label><input type="checkbox" value="Loja física"> Loja física</label><label><input type="checkbox" value="Instagram"> Instagram</label><label><input type="checkbox" value="WhatsApp"> WhatsApp</label><label><input type="checkbox" value="Marketplace"> Marketplace</label><label><input type="checkbox" value="Site próprio"> Site próprio</label></div>
+<label class="q">Como o cliente chega até você? <span class="hint">(marque todos)</span></label><div class="opts" data-k="l_chega"><label><input type="checkbox" value="Passa na porta"> Passa na porta</label><label><input type="checkbox" value="Indicação"> Indicação</label><label><input type="checkbox" value="Instagram"> Instagram</label><label><input type="checkbox" value="Google"> Google</label><label><input type="checkbox" value="Anúncios"> Anúncios</label></div>
+<label class="q">Você anuncia hoje?</label><div class="opts" data-k="l_anuncia"><label><input type="radio" name="l_anuncia" value="Não"> Não</label><label><input type="radio" name="l_anuncia" value="Já anunciei e parei"> Já anunciei e parei</label><label><input type="radio" name="l_anuncia" value="Anuncio hoje"> Anuncio hoje</label></div>
+<label class="q" for="l_dif">Qual a sua maior dificuldade para vender mais?</label><textarea id="l_dif" placeholder="Ex.: movimento fraco, o cliente pergunta o preço e some, concorrência..."></textarea>
+<label class="q" for="l_meta">O que você quer melhorar nos próximos 90 dias?</label><textarea id="l_meta"></textarea>
+</div></div>
+
+<div class="card"><h2>Para marcar</h2>
+<label class="q" for="hor">Melhor dia e horário para a conversa <span class="hint">(20 minutos, pelo WhatsApp)</span></label><input type="text" id="hor" placeholder="Ex.: terça à tarde">
+<label class="ck" style="margin-bottom:0"><input type="checkbox" id="lgpd"><span>Autorizo o uso destas respostas apenas para preparar o meu diagnóstico.</span></label></div>
+
+<a class="btn" id="send" href="#" target="_blank" rel="noopener noreferrer">Enviar para o Gustavo pelo WhatsApp</a>
+<p class="err" id="err"></p>
+<button class="btn o" id="cp" type="button">Copiar as respostas</button>
+<p class="small">Ao tocar em enviar, o WhatsApp abre com as suas respostas já escritas. É só apertar enviar.</p>
+</div>
+<script>
+var WHATS="5521965165370";
+function $(i){return document.getElementById(i)}
+function v(i){var e=$(i);return e?e.value.trim():''}
+function grp(k){var o=document.querySelector('[data-k="'+k+'"]');if(!o)return'';var a=[].slice.call(o.querySelectorAll('input:checked')).map(function(x){return x.value});return a.join(', ')}
+function perfil(){var r=document.querySelector('input[name=perfil]:checked');return r?r.value:''}
+function msg(){
+ var p=perfil(),L=['*Ficha do diagnóstico gratuito*','',p?'Perfil: '+p:'','Nome: '+v('nome'),'WhatsApp: '+v('zap'),'Instagram: '+v('ig'),'Site: '+(v('site')||'não tenho'),'Cidade: '+v('cid'),''];
+ if(p=='Advogado(a)')L=L.concat(['Área: '+v('a_area'),'Atende: '+grp('a_publico'),'Clientes chegam por: '+(grp('a_canais')||'-'),'Marketing/agência antes: '+grp('a_ag'),'Maior dificuldade: '+(v('a_dif')||'-'),'Quero melhorar em 90 dias: '+(v('a_meta')||'-')]);
+ if(p=='Lojista')L=L.concat(['Vende: '+v('l_seg'),'Onde vende: '+(grp('l_onde')||'-'),'Cliente chega por: '+(grp('l_chega')||'-'),'Anuncia: '+grp('l_anuncia'),'Maior dificuldade: '+(v('l_dif')||'-'),'Quero melhorar em 90 dias: '+(v('l_meta')||'-')]);
+ L.push('','Melhor dia e horário: '+(v('hor')||'-'));
+ return L.filter(function(x,i){return x!==''||L[i-1]!==''}).join('\n')}
+function falta(){var p=perfil();if(!p)return'Escolha se você é advogado(a) ou lojista.';if(!v('nome'))return'Preencha o seu nome.';if(v('zap').replace(/\D/g,'').length<10)return'Preencha o seu WhatsApp com DDD.';if(!$('lgpd').checked)return'Marque a autorização para continuar.';return''}
+function upd(){var p=perfil();$('err').style.display='none';$('b-adv').className='bloco'+(p=='Advogado(a)'?' on':'');$('b-loj').className='bloco'+(p=='Lojista'?' on':'');$('send').href='https://wa.me/'+WHATS+'?text='+encodeURIComponent(msg())}
+document.addEventListener('input',upd);document.addEventListener('change',upd);
+$('send').addEventListener('click',function(e){var f=falta();if(f){e.preventDefault();$('err').textContent=f;$('err').style.display='block';return}$('err').style.display='none';upd();try{if(typeof fbq=='function')fbq('track','Lead')}catch(x){}});
+$('cp').addEventListener('click',function(){var f=falta();if(f){$('err').textContent=f;$('err').style.display='block';return}$('err').style.display='none';try{navigator.clipboard.writeText(msg()).then(function(){$('cp').textContent='Copiado'})}catch(e){$('cp').textContent='Não foi possível copiar'}});
+upd();
+</script></body></html>
